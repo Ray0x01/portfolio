@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rayyan Afridi — Cybersecurity Professional</title>
+  <meta name="description" content="Rayyan Afridi — Founder of WokirX. Google Certified Cybersecurity Professional. Bug bounty hunter, penetration tester, DFIR & blue team practitioner." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkfNwp5WmmHdIYDfKZ7hEdaNZA6Y7IIrR0y4VJQseXmJvPB+YG0RE+8bg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta property="og:title" content="Rayyan Afridi — Cybersecurity Professional" />
+  <meta property="og:description" content="Founder of WokirX • Google Certified • Bug Bounty & Pentesting • DFIR & Blue Team" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/placeholder/placeholder/main/cover.png" />
+  <meta name="theme-color" content="#dc2626" />
+  <style>
+    :root {
+      --primary: #dc2626; /* red */
+      --primary-600:#b91c1c;
+      --bg:#0a0a0a;
+      --bg-soft:#0f0f10;
+      --card:#121214;
+      --border:#242429;
+      --text:#fafafa;
+      --muted:#a1a1aa;
+      --success:#22c55e;
+      --warn:#eab308;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+    a{color:inherit}
+    /* scrollbar */
+    ::-webkit-scrollbar{width:10px}
+    ::-webkit-scrollbar-thumb{background:var(--primary);border-radius:6px}
+    ::-webkit-scrollbar-track{background:#0a0a0a}
+
+    .container{max-width:1200px;margin:0 auto;padding:0 1.25rem}
+    .btn{display:inline-flex;gap:.5rem;align-items:center;border:1px solid var(--border);background:var(--card);padding:.8rem 1.1rem;border-radius:.8rem;text-decoration:none;font-weight:600;transition:.2s}
+    .btn:hover{transform:translateY(-2px);border-color:var(--primary);box-shadow:0 8px 24px rgba(220,38,38,.15)}
+    .btn.primary{background:var(--primary);border-color:var(--primary);color:#fff}
+    .btn.primary:hover{background:var(--primary-600)}
+
+    /* header */
+    .skip{position:absolute;left:-999px;top:auto;overflow:hidden}
+    .skip:focus{left:1rem;top:1rem;background:#111;color:#fff;padding:.5rem .75rem;border-radius:.5rem;z-index:10000}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(16px);background:rgba(10,10,10,.75);border-bottom:1px solid var(--border);z-index:50}
+    nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:.75rem;font-weight:800;letter-spacing:.2px}
+    .brand i{color:var(--primary)}
+    .nav{display:flex;gap:1.2rem}
+    .nav a{color:var(--muted);text-decoration:none;position:relative}
+    .nav a:after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--primary);transition:width .2s}
+    .nav a:hover{color:var(--text)}
+    .nav a:hover:after{width:100%}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;min-height:80vh}
+    .kicker{color:var(--primary);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.8rem}
+    h1{font-size:clamp(2.2rem,4.5vw,4rem);line-height:1.1;margin:.5rem 0 1rem;background:linear-gradient(135deg,var(--primary),#ef4444);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .lead{color:var(--muted);max-width:60ch}
+    .badges{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.25rem 0}
+    .badge{background:var(--card);border:1px solid var(--border);padding:.35rem .6rem;border-radius:.5rem;font-size:.8rem}
+
+    /* terminal */
+    .terminal{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .term-top{display:flex;align-items:center;gap:.4rem;padding:.6rem .8rem;background:#0d0d0f;border-bottom:1px solid var(--border)}
+    .dot{width:10px;height:10px;border-radius:50%}
+    .dot.red{background:var(--primary)}
+    .dot.yellow{background:var(--warn)}
+    .dot.green{background:var(--success)}
+    .term-title{margin-left:.5rem;color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:.85rem}
+    .term-body{height:380px;overflow:auto;padding:1rem;font-family:"JetBrains Mono",monospace;font-size:.9rem}
+    .prompt{color:var(--primary)}
+    .cmd{color:#86efac}
+    .out{color:#cbd5e1}
+
+    /* sections */
+    section{padding:4.5rem 0}
+    .section-title{font-size:2rem;margin-bottom:.5rem}
+    .section-sub{color:var(--muted);margin-bottom:2rem}
+    .grid{display:grid;gap:1.2rem}
+
+    /* stats */
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;text-align:center;transition:.2s}
+    .stat:hover{transform:translateY(-4px);border-color:var(--primary)}
+    .stat i{font-size:1.6rem;color:var(--primary)}
+    .stat .num{font-size:2rem;font-weight:800}
+    .stat .label{color:var(--muted)}
+
+    /* skills */
+    .skills{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem}
+    .card h3{margin:.25rem 0 .75rem}
+    .card p{color:var(--muted)}
+
+    /* timeline */
+    .timeline{position:relative;max-width:900px;margin:0 auto}
+    .timeline:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--border);transform:translateX(-50%)}
+    .tl-item{position:relative;width:50%;padding:0 1rem 2rem}
+    .tl-item:nth-child(odd){left:0;text-align:right}
+    .tl-item:nth-child(even){left:50%}
+    .tl-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem}
+    .tl-item:before{content:"";position:absolute;top:.8rem;width:14px;height:14px;border-radius:50%;background:var(--primary);border:3px solid var(--bg)}
+    .tl-item:nth-child(odd):before{right:-7px}
+    .tl-item:nth-child(even):before{left:-7px}
+    .tl-date{color:var(--primary);font-weight:700}
+    .tl-role{font-weight:700}
+    .tl-org{color:var(--muted);font-weight:600}
+
+    /* contact */
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .contact .info .row{display:flex;gap:.75rem;align-items:center;margin:.75rem 0}
+    .contact .info .row i{width:40px;height:40px;display:grid;place-items:center;background:var(--primary);color:#fff;border-radius:.6rem}
+    .contact a.link{color:var(--primary);text-decoration:none}
+
+    footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--muted);text-align:center}
+
+    /* responsive */
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .timeline:before{left:16px}
+      .tl-item{width:100%;left:0 !important;text-align:left !important;padding-left:2.25rem}
+      .tl-item:before{left:9px !important}
+      .contact{grid-template-columns:1fr}
+      .nav{display:none}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Rayyan Afridi",
+    "jobTitle":"Cybersecurity Professional",
+    "email":"mailto:rayyan.official@proton.me",
+    "affiliation":[{"@type":"Organization","name":"WokirX"}],
+    "knowsAbout":["Bug bounty","Penetration testing","Digital forensics","Blue teaming","API security"],
+    "sameAs":["https://github.com/your-github","https://www.linkedin.com/in/your-linkedin"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#home" aria-label="Homepage">
+          <i class="fa-solid fa-terminal"></i> <span>Rayyan<span style="color:var(--primary)">.afridi</span></span>
+        </a>
+        <div class="nav" role="navigation" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div>
+        <p class="kicker">Cybersecurity • Bug Bounty • DFIR</p>
+        <h1>Rayyan Afridi</h1>
+        <p class="lead">
+          Founder of <strong>WokirX</strong>. Google Certified Cybersecurity Professional. I started hacking at 14 and at 16 I landed my first <strong>critical</strong> bounty. Today I hunt bugs, pentest apps & APIs, and help teams build resilient defenses across blue team and forensics.
+        </p>
+        <div class="badges" aria-label="Certifications">
+          <span class="badge">BSCP</span>
+          <span class="badge">PCEP</span>
+          <span class="badge">eJPT</span>
+          <span class="badge">SY0-701</span>
+          <span class="badge">APISEC CP</span>
+          <span class="badge">Google Certified Cybersecurity</span>
+        </div>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+          <a class="btn primary" href="#contact"><i class="fa-solid fa-shield-halved"></i> Secure your systems</a>
+          <a class="btn" href="#skills"><i class="fa-solid fa-code"></i> View expertise</a>
+          <a class="btn" href="https://github.com/your-github" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </div>
+      <div class="terminal" aria-label="Demo terminal">
+        <div class="term-top">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="term-title">recon-session.log</span>
+        </div>
+        <div class="term-body" id="term"></div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section aria-labelledby="stats-title">
+      <h2 id="stats-title" class="section-title">Impact</h2>
+      <p class="section-sub">A snapshot from security assessments, research, and community work.</p>
+      <div class="stats" id="stats">
+        <div class="stat">
+          <i class="fa-solid fa-magnifying-glass-bug" aria-hidden="true"></i>
+          <div class="num" data-target="342">0</div>
+          <div class="label">Vulnerabilities found</div>
+        </div>
+        <div class="stat">
+          <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
+          <div class="num" data-target="47">0</div>
+          <div class="label">Clients / orgs protected</div>
+        </div>
+        <div class="stat">
+          <i class="fa-solid fa-medal" aria-hidden="true"></i>
+          <div class="num" data-target="17">0</div>
+          <div class="label">Certifications</div>
+        </div>
+        <div class="stat">
+          <i class="fa-solid fa-hourglass" aria-hidden="true"></i>
+          <div class="num" data-target="4">0</div>
+          <div class="label">Years hands‑on</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-title">About</h2>
+      <p class="section-sub">
+        I focus on pragmatic security: deep recon, smart exploitation, and fast, actionable fixes. I’ve helped companies and universities harden their systems — including Islamia College, Qurtuba School & Colleges — and served as an Audit Specialist & Security Researcher with Axiom Tech.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="section-title">Core Expertise</h2>
+      <div class="grid skills">
+        <div class="card">
+          <h3><i class="fa-solid fa-bullseye"></i> Bug Bounty & Pentesting</h3>
+          <p>OWASP Top 10, API & web app testing, advanced recon, chaining misconfigs, and writing clear proofs-of-concept. Tooling: Burp, Nuclei, ffuf, kxss, amass.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fa-solid fa-network-wired"></i> Blue Team & DFIR</h3>
+          <p>Threat hunting, log analysis, memory & disk forensics, incident containment & lessons‑learned. MITRE ATT&CK mapping and detections.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fa-solid fa-microchip"></i> Cloud & Infrastructure</h3>
+          <p>AWS/Azure/GCP hardening, container security, secrets management, zero‑trust patterns, and CI/CD guardrails.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fa-solid fa-scale-balanced"></i> Compliance & Risk</h3>
+          <p>SOX, HIPAA, PCI‑DSS, GDPR, ISO‑27001; risk assessment, threat modelling, and practical security policies.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE / TIMELINE -->
+    <section id="experience" aria-labelledby="exp-title">
+      <h2 id="exp-title" class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-date">Dec 2024 — Present</div>
+            <div class="tl-role">Lead — Pakistan Digital Cyber Hackathon Community</div>
+            <div class="tl-org">Community Leadership</div>
+            <p>Organizing challenges, mentoring newcomers, and elevating national security talent with practical, real‑world scenarios.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-date">Aug 2024 — Jan 2025</div>
+            <div class="tl-role">Security Consultant</div>
+            <div class="tl-org">Dmeta.com</div>
+            <p>Performed assessments and remediation guidance across web and API surfaces; partnered with engineering to land durable fixes.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-date">2023 — Present</div>
+            <div class="tl-role">Founder</div>
+            <div class="tl-org">WokirX</div>
+            <p>Security research & services collective delivering audits, training, and incident response.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-date">2022 — 2024</div>
+            <div class="tl-role">Audit Specialist & Security Researcher</div>
+            <div class="tl-org">Axiom Tech</div>
+            <p>Led audits and drove risk reduction for companies and universities including Islamia College and Qurtuba School & Colleges.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-date">2023-2024</div>
+            <div class="tl-role">Complete Focus On Bug Bounty</div>
+            <div class="tl-org">Bug Bounty Programs</div>
+            <p>Earned my first critical‑severity bounty and 8 P2s after a focused year of hunting and skill‑building.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Get in touch</h2>
+      <p class="section-sub">Fastest way: email. I’m open to audits, pentests, incident response, and mentoring.</p>
+      <div class="contact">
+        <div class="info card">
+          <div class="row"><i class="fa-solid fa-envelope"></i> <div><div style="font-weight:700">Email</div><a class="link" href="mailto:rayyan.official@proton.me">rayyan.official@proton.me</a></div></div>
+          <div class="row"><i class="fa-solid fa-location-dot"></i> <div><div style="font-weight:700">Location</div>Pakistan (remote friendly)</div></div>
+          <div class="row"><i class="fa-solid fa-user-tie"></i> <div><div style="font-weight:700">Availability</div>Consulting • Short‑term gigs • Community speaking</div></div>
+          <div style="display:flex;gap:.6rem;margin-top:.75rem">
+            <a class="btn" href="https://www.linkedin.com/in/pentesterxrayyan" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          </div>
+        </div>
+        <form class="card" id="contactForm" aria-label="Contact form">
+          <label for="name">Full name</label>
+          <input id="name" name="name" required style="margin:.4rem 0 1rem;padding:.8rem;border-radius:.6rem;border:1px solid var(--border);background:var(--bg-soft);color:var(--text)" />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required style="margin:.4rem 0 1rem;padding:.8rem;border-radius:.6rem;border:1px solid var(--border);background:var(--bg-soft);color:var(--text)" />
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" required style="margin:.4rem 0 1rem;padding:.8rem;border-radius:.6rem;border:1px solid var(--border);background:var(--bg-soft);color:var(--text)" />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required rows="5" style="margin:.4rem 0 1rem;padding:.8rem;border-radius:.6rem;border:1px solid var(--border);background:var(--bg-soft);color:var(--text)"></textarea>
+          <button class="btn primary" type="submit" style="width:100%"><i class="fa-solid fa-paper-plane"></i> Send</button>
+          <p id="formStatus" class="section-sub" aria-live="polite" style="margin:.6rem 0 0"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:center;gap:.6rem;margin-bottom:.6rem">
+        <a class="btn" href="#home" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+        <a class="btn" href="mailto:rayyan.official@proton.me"><i class="fa-solid fa-envelope"></i></a>
+        <a class="btn" href="https://github.com/Ray0x01" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <small>© <span id="year"></span> Rayyan Afridi • Built with pure HTML/CSS/JS • No tracking</small>
+    </div>
+  </footer>
+
+  <script>
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple terminal demo (legal/safe output)
+    const lines = [
+      {t:'prompt', s:'rayyan@wokirx:~$ '},
+      {t:'cmd', s:'recon target.example --subdomains --dns --live'},
+      {t:'out', s:'[ok] 247 subdomains resolved • 32 live hosts'},
+      {t:'prompt', s:'rayyan@wokirx:~$ '},
+      {t:'cmd', s:'nuclei -tags exposures,misconfig -u https://api.example'},
+      {t:'out', s:'[medium] CORS misconfig • [high] Verbose error leakage'},
+      {t:'prompt', s:'rayyan@wokirx:~$ '},
+      {t:'cmd', s:'forensics parse-memory mem.dmp --ioc ./yara/apiseccp.yar'},
+      {t:'out', s:'[ioc] suspicious token in svchost child • dumped strings'},
+      {t:'prompt', s:'rayyan@wokirx:~$ '},
+      {t:'cmd', s:'mitre map --tactics TA0001,TA0002,TA0008'},
+      {t:'out', s:'Recon → Resource Dev → Lateral Movement (hypothesis)'}
+    ];
+    const term = document.getElementById('term');
+    function appendLine(cls, text){
+      const d = document.createElement('div');
+      d.className = cls;
+      d.style.margin = '0 0 .35rem';
+      d.textContent = text;
+      term.appendChild(d);
+      term.scrollTop = term.scrollHeight;
+    }
+    let i=0; (function tick(){
+      if(i>=lines.length){return}
+      const l=lines[i++];
+      appendLine(l.t==='prompt'?'prompt':l.t==='cmd'?'cmd':'out', l.s);
+      setTimeout(tick, 500);
+    })();
+
+    // Animated stats
+    function animateStats(){
+      document.querySelectorAll('.num').forEach(el=>{
+        const target = +el.dataset.target || 0;
+        let cur = 0; const step = Math.max(1, Math.floor(target/120));
+        const iv = setInterval(()=>{ cur += step; if(cur>=target){cur=target; clearInterval(iv)}; el.textContent = cur; }, 16);
+      });
+    }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ animateStats(); io.disconnect(); } });
+    }, {threshold:.3});
+    io.observe(document.getElementById('stats'));
+
+    // Contact form (mailto fallback)
+    document.getElementById('contactForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const f = e.currentTarget;
+      const name = f.name.value.trim();
+      const email = f.email.value.trim();
+      const subject = encodeURIComponent(f.subject.value.trim());
+      const message = encodeURIComponent(f.message.value.trim()+ `\n\n— ${name} (${email})`);
+      const mailto = `mailto:rayyan.official@proton.me?subject=${subject}&body=${message}`;
+      document.getElementById('formStatus').textContent = 'Opening your email app…';
+      window.location.href = mailto;
+      setTimeout(()=>{ document.getElementById('formStatus').textContent = 'If your email app did not open, email me directly at rayyan.official@proton.me'; }, 1200);
+    });
+  </script>
+</body>
+</html>
